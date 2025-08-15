@@ -27,7 +27,7 @@ def clean(text):
     return " ".join(words)
 
 # Load and preprocess data
-data = pd.read_csv("D:\\projects\\sid\\siddd.venv\\stress.csv")
+data = pd.read_csv("stress.csv")
 data["text"] = data["text"].apply(clean)
 data["label"] = data["label"].map({0: "No Stress", 1: "Stress"})
 data = data[["text", "label"]]
@@ -55,3 +55,4 @@ if st.button("Predict"):
         st.subheader(f"Prediction: **{prediction}**")
     else:
         st.warning("Please enter some text to analyze.")
+
